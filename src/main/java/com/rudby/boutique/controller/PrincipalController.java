@@ -1,20 +1,23 @@
 package com.rudby.boutique.controller;
 
+import java.awt.Graphics;
+import java.awt.Shape;
+
+import javax.swing.text.BadLocationException;
+import javax.swing.text.View;
+import javax.swing.text.Position.Bias;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class PrincipalController {
 
-	@GetMapping("/")
-	public String principal() {
-		return "index";
-	}
-	@GetMapping("/inicio")
-	public String inicio() {
-		return "index";
-	}
+	
+	
+	
 	
 	@GetMapping("/tienda")
 	public String tienda() {
@@ -30,9 +33,9 @@ public class PrincipalController {
 		return "pagar";
 	}
 	
-	@GetMapping("/confirmarcion")
+	@GetMapping("/confirmacion")
 	public String confirmarcion() {
-		return "confirmarcion";
+		return "confirmacion";
 	}
 	
 }

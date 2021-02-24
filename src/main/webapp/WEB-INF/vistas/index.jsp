@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,12 +39,10 @@
 </head>
 <body>
 
-
-
 	<div class="page-holder">
 		<!-- navbar-->
 		<jsp:include page="shared/header.jsp"></jsp:include>
-		
+
 		<!--  Modal -->
 		<div class="modal fade" id="productView" tabindex="-1" role="dialog"
 			aria-hidden="true">
@@ -138,29 +137,35 @@
 			<!-- CATEGORIES SECTION-->
 			<section class="pt-5">
 				<header class="text-center">
-					<p class="small text-muted small text-uppercase mb-1">Carefully
-						created collections</p>
-					<h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
+					<p class="small text-muted small text-uppercase mb-1">NUestras
+						Categorias</p>
+					<h2 class="h5 text-uppercase mb-4">Elige tu categoria</h2>
 				</header>
 				<div class="row">
-					<div class="col-md-4 mb-4 mb-md-0">
+					<!-- div class="col-md-4 mb-4 mb-md-0">
 						<a class="category-item" href="shop.html"><img
 							class="img-fluid" src="img/cat-img-1.jpg" alt=""><strong
 							class="category-item-title">Clothes</strong></a>
-					</div>
-					<div class="col-md-4 mb-4 mb-md-0">
-						<a class="category-item mb-4" href="shop.html"><img
-							class="img-fluid" src="img/cat-img-2.jpg" alt=""><strong
-							class="category-item-title">Shoes</strong></a><a
+					</div-->
+					<c:forEach items="${categorias}" var="cat">
+
+						<div class="col-md-4 mb-4 mb-md-0">
+							<a class="category-item mb-4" href="shop.html"><img
+								class="img-fluid" src="${cat.imagen}" alt=""><strong
+								class="category-item-title">${cat.detalle}</strong></a>
+							<!-- a
 							class="category-item" href="shop.html"><img class="img-fluid"
 							src="img/cat-img-3.jpg" alt=""><strong
-							class="category-item-title">Watches</strong></a>
-					</div>
-					<div class="col-md-4">
+							class="category-item-title">Watches</strong></a -->
+						</div>
+					</c:forEach>
+
+
+					<!-- div class="col-md-4">
 						<a class="category-item" href="shop.html"><img
 							class="img-fluid" src="img/cat-img-4.jpg" alt=""><strong
 							class="category-item-title">Electronics</strong></a>
-					</div>
+					</div-->
 				</div>
 			</section>
 			<!-- TRENDING PRODUCTS-->
@@ -533,6 +538,22 @@
 		crossorigin="anonymous">
 
 
-
+	<script>
+$.ajax(
+		{url: "tipodocumentos", success: function(result){
+	var html="";
+	for(var elm of result){
+		html+="<option data-tamanio='"+elm.caracteres+"' value='"+elm.codigo+"'>"+elm.detalle+" ("+elm.detalle_abv+")</option>"
+		}
+	$("#cbodocumento").html(html);
+}
+		});
+		
+		$("#cbodocumento").on("change",function(){
+			$("#txtdocumento").val("");
+			var tamanio =$("#cbodocumento option:selected").data("tamanio");
+			$("#txtdocumento").attr("maxlength",tamanio)
+			})
+		</script>
 </body>
 </html>

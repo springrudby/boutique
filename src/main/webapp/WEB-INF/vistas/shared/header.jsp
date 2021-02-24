@@ -12,6 +12,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
 						<!-- Link--> <a class="nav-link active" href="inicio">Inicio</a>
@@ -20,18 +21,21 @@
 						<!-- Link--> <a class="nav-link" href="tienda">Tienda</a>
 					</li>
 				</ul>
+
 				<ul class="navbar-nav ml-auto">
 					<!-- li class="nav-item"><a class="nav-link" href="cart.html">
 									<i class="fas fa-dolly-flatbed mr-1 text-gray"></i>Cart<small
 									class="text-gray">(2)</small>
 							</a></li-->
 					<!-- Call Modal Login -->
-					<li class="nav-item"><a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#loginmodal">
-							Ingresar </a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="javascript:void(0);" data-toggle="modal"
+						data-target="#loginmodal"> Ingresar </a></li>
 					<li class="nav-item"><a class="nav-link" href="#"> | </small></a></li>
 					<!-- Call Modal Register -->
-					<li class="nav-item"><a class="nav-link" href="javascript:void(0);" data-toggle="modal" data-target="#Registrarmodal">
-							Registrar </a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="javascript:void(0);" data-toggle="modal"
+						data-target="#Registrarmodal"> Registrar </a></li>
 				</ul>
 			</div>
 		</nav>
@@ -61,7 +65,7 @@
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label">Contraseña:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<input type="password" class="form-control" id="message-text" />
 					</div>
 				</form>
 			</div>
@@ -111,37 +115,40 @@ $('#modalprueba').click(function(){
 						<input type="email" class="form-control" id="recipient-name">
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Apellido Paterno:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<label for="message-text" class="col-form-label">Apellido
+							Paterno:</label> <input type="text" class="form-control"
+							id="message-text" />
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Apellido Materno:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<label for="message-text" class="col-form-label">Apellido
+							Materno:</label> <input type="text" class="form-control"
+							id="message-text" />
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Tipo de Documento:</label>
-						<select class="custom-select" id="cbodocumento">
-						<option>D.N.I</option>
+						<label for="message-text" class="col-form-label">Tipo de
+							Documento:</label> <select class="custom-select" id="cbodocumento">
+
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label">Documento:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<input type="text" class="form-control" id="txtdocumento" maxlength="8" />
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Correo:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<label for="message-text" class="col-form-label">Correo:</label> <input
+							type="text" class="form-control" id="message-text" />
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label">Contraseña:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<input type="text" class="form-control" id="message-text" />
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Repetir Contraseña:</label>
-						<input type="password" class="form-control" id="message-text"/>
+						<label for="message-text" class="col-form-label">Repetir
+							Contraseña:</label> <input type="text" class="form-control"
+							id="message-text" />
 					</div>
-					
-					
+
+
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -152,3 +159,24 @@ $('#modalprueba').click(function(){
 		</div>
 	</div>
 </div>
+
+
+
+<script>
+	var url = document.location.pathname.split('/')[2];
+	url=(url==""?'inicio':url); 
+	
+	var navlinks = document.getElementsByClassName("nav-link");  
+	for (var navlink of navlinks) {
+		navlink.classList.remove("active");
+		if(url == navlink.innerText.toLowerCase()){
+			navlink.classList.add("active");
+			}
+	}
+
+	
+
+		
+	
+	
+</script>
