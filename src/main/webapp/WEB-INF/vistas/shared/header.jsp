@@ -112,48 +112,52 @@ $('#modalprueba').click(function(){
 				<form>
 					<div class="form-group">
 						<label for="recipient-name" class="col-form-label">Nombres:</label>
-						<input type="email" class="form-control" id="recipient-name">
+						<input type="email" class="form-control" id="nombre">
+						<small id="nombreerror" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Apellido
-							Paterno:</label> <input type="text" class="form-control"
-							id="message-text" />
+						<label for="message-text" class="col-form-label">Apellido Paterno:</label> 
+						<input type="text" class="form-control" id="ape_paterno" />
+							<small id="ape_paternoerror" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Apellido
-							Materno:</label> <input type="text" class="form-control"
-							id="message-text" />
+						<label for="message-text" class="col-form-label">Apellido Materno:</label>
+							
+							<input type="text" class="form-control" id="ape_materno" />
+							<small id="ape_maternoerror" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Tipo de
-							Documento:</label> <select class="custom-select" id="cbodocumento">
-
+						<label for="message-text" class="col-form-label">Tipo de Documento:</label>
+						<select class="custom-select" id="codigo_tipodocumento">
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label">Documento:</label>
-						<input type="text" class="form-control" id="txtdocumento" maxlength="8" />
+						<input type="text" class="form-control" id="documento" maxlength="8" />
+						<small id="documentoerror" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Correo:</label> <input
-							type="text" class="form-control" id="message-text" />
+						<label for="message-text" class="col-form-label">Correo:</label> 
+						<input type="text" class="form-control" id="correo" />
+						<small id="correoerror" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label">Contraseña:</label>
-						<input type="text" class="form-control" id="message-text" />
+						<input type="text" class="form-control" id="clave" />
+						<small id="claveerror" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Repetir
-							Contraseña:</label> <input type="text" class="form-control"
-							id="message-text" />
+						<label for="message-text" class="col-form-label">Repetir Contraseña:</label>
+							<input type="text" class="form-control" id="clave1" />
+							<small id="clave1error" class="text-danger" style="display:none">minimo 8 caracteres</small>
 					</div>
 
-
 				</form>
+				
 			</div>
 			<div class="modal-footer">
 				<!-- button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
-				<button type="button" class="btn btn-block text-white btn-primary">Registrar</button>
+				<button type="button" class="btn btn-block text-white btn-primary"id="btnregistrar" >Registrar</button>
 				<a class="btn text-info btn-default" data-dismiss="modal">Cancelar</a>
 			</div>
 		</div>
@@ -174,9 +178,6 @@ $('#modalprueba').click(function(){
 			}
 	}
 
-	
-
-		
 	
 	
 </script>

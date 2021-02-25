@@ -537,7 +537,7 @@
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 		crossorigin="anonymous">
 
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script>
 $.ajax(
 		{url: "tipodocumentos", success: function(result){
@@ -545,15 +545,45 @@ $.ajax(
 	for(var elm of result){
 		html+="<option data-tamanio='"+elm.caracteres+"' value='"+elm.codigo+"'>"+elm.detalle+" ("+elm.detalle_abv+")</option>"
 		}
-	$("#cbodocumento").html(html);
+	$("#codigo_tipodocumento").html(html);
 }
 		});
 		
-		$("#cbodocumento").on("change",function(){
-			$("#txtdocumento").val("");
-			var tamanio =$("#cbodocumento option:selected").data("tamanio");
-			$("#txtdocumento").attr("maxlength",tamanio)
+		$("#codigo_tipodocumento").on("change",function(){
+			$("#documento").val("");
+			var tamanio =$("#codigo_tipodocumento option:selected").data("tamanio");
+			$("#documento").attr("maxlength",tamanio)
 			})
+			
+			
+$("#btnregistrar").on("click",function(){
+	var data={
+			nombre:$("nombre").val(),
+			ape_paterno:$("ape_paterno").val(),
+			ape_materno:$("ape_materno").val(),
+			codigo_tipodocumento:$("codigo_tipodocumento").val(),
+			documento:$("documento").val(),
+			correo:$("correo").val(),
+			clave:$("clave").val()	
+			};
+	
+    $.ajax({
+        type:"POST",
+        url: "registrarusuario",
+        data:data,
+        success: function (result) {
+            $("#Registrarmodal").modal("fade");
+          Swal.fire(
+        		  'Usuario Registrado',
+        		  'active su cuenta viendo el correo enviado a :'+result.correo,
+        		  'success'
+        		)
+        },error:function(err){
+
+            },
+      });
+});
+		
 		</script>
 </body>
 </html>
