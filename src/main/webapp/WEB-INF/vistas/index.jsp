@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Boutique</title>
@@ -37,6 +38,7 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
+
 <body>
 
 	<div class="page-holder">
@@ -64,7 +66,7 @@
 							<div class="col-lg-6">
 								<button class="close p-4" type="button" data-dismiss="modal"
 									aria-label="Close">
-									<span aria-hidden="true">×</span>
+									<span aria-hidden="true">Ã</span>
 								</button>
 								<div class="p-5 my-md-4">
 									<ul class="list-inline mb-2">
@@ -197,7 +199,7 @@
 								</div>
 							</div>
 							<h6>
-								<a class="reset-anchor" href="detail.html">Kui Ye Chen’s
+								<a class="reset-anchor" href="detail.html">Kui Ye Chenâs
 									AirPods</a>
 							</h6>
 							<p class="small text-muted">$250</p>
@@ -400,8 +402,8 @@
 							<div class="d-inline-block">
 								<div class="media align-items-end">
 									<svg class="svg-icon svg-icon-big svg-icon-light">
-                      <use xlink:href="#delivery-time-1"> </use>
-                    </svg>
+												<use xlink:href="#delivery-time-1"> </use>
+											</svg>
 									<div class="media-body text-left ml-3">
 										<h6 class="text-uppercase mb-1">Free shipping</h6>
 										<p class="text-small mb-0 text-muted">Free shipping
@@ -414,8 +416,8 @@
 							<div class="d-inline-block">
 								<div class="media align-items-end">
 									<svg class="svg-icon svg-icon-big svg-icon-light">
-                      <use xlink:href="#helpline-24h-1"> </use>
-                    </svg>
+												<use xlink:href="#helpline-24h-1"> </use>
+											</svg>
 									<div class="media-body text-left ml-3">
 										<h6 class="text-uppercase mb-1">24 x 7 service</h6>
 										<p class="text-small mb-0 text-muted">Free shipping
@@ -428,8 +430,8 @@
 							<div class="d-inline-block">
 								<div class="media align-items-end">
 									<svg class="svg-icon svg-icon-big svg-icon-light">
-                      <use xlink:href="#label-tag-1"> </use>
-                    </svg>
+												<use xlink:href="#label-tag-1"> </use>
+											</svg>
 									<div class="media-body text-left ml-3">
 										<h6 class="text-uppercase mb-1">Festival offer</h6>
 										<p class="text-small mb-0 text-muted">Free shipping
@@ -498,7 +500,7 @@
 
 
 
-
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="./vendor/jquery/jquery.min.js"></script>
 	<script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="./vendor/lightbox2/js/lightbox.min.js"></script>
@@ -507,83 +509,39 @@
 	<script src="./vendor/owl.carousel2/owl.carousel.min.js"></script>
 	<script src="./vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
 	<script src="./js/front.js"></script>
+	<script src="./js/header.js"></script>
 	<script>
-		// ------------------------------------------------------- //
-		//   Inject SVG Sprite - 
-		//   see more here 
-		//   https://css-tricks.com/ajaxing-svg-sprite/
-		// ------------------------------------------------------ //
-		function injectSvgSprite(path) {
+				// ------------------------------------------------------- //
+				//   Inject SVG Sprite - 
+				//   see more here 
+				//   https://css-tricks.com/ajaxing-svg-sprite/
+				// ------------------------------------------------------ //
+				function injectSvgSprite(path) {
 
-			var ajax = new XMLHttpRequest();
-			ajax.open("GET", path, true);
-			ajax.send();
-			ajax.onload = function(e) {
-				var div = document.createElement("div");
-				div.className = 'd-none';
-				div.innerHTML = ajax.responseText;
-				document.body.insertBefore(div, document.body.childNodes[0]);
-			}
-		}
-		// this is set to BootstrapTemple website as you cannot 
-		// inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-		// while using file:// protocol
-		// pls don't forget to change to your domain :)
-		injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
-	</script>
+					var ajax = new XMLHttpRequest();
+					ajax.open("GET", path, true);
+					ajax.send();
+					ajax.onload = function (e) {
+						var div = document.createElement("div");
+						div.className = 'd-none';
+						div.innerHTML = ajax.responseText;
+						document.body.insertBefore(div, document.body.childNodes[0]);
+					}
+				}
+				// this is set to BootstrapTemple website as you cannot 
+				// inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+				// while using file:// protocol
+				// pls don't forget to change to your domain :)
+				injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg');
+			</script>
 	<!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 	<link rel="stylesheet"
 		href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 		crossorigin="anonymous">
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script>
-$.ajax(
-		{url: "tipodocumentos", success: function(result){
-	var html="";
-	for(var elm of result){
-		html+="<option data-tamanio='"+elm.caracteres+"' value='"+elm.codigo+"'>"+elm.detalle+" ("+elm.detalle_abv+")</option>"
-		}
-	$("#codigo_tipodocumento").html(html);
-}
-		});
-		
-		$("#codigo_tipodocumento").on("change",function(){
-			$("#documento").val("");
-			var tamanio =$("#codigo_tipodocumento option:selected").data("tamanio");
-			$("#documento").attr("maxlength",tamanio)
-			})
-			
-			
-$("#btnregistrar").on("click",function(){
-	var data={
-			nombre:$("nombre").val(),
-			ape_paterno:$("ape_paterno").val(),
-			ape_materno:$("ape_materno").val(),
-			codigo_tipodocumento:$("codigo_tipodocumento").val(),
-			documento:$("documento").val(),
-			correo:$("correo").val(),
-			clave:$("clave").val()	
-			};
-	
-    $.ajax({
-        type:"POST",
-        url: "registrarusuario",
-        data:data,
-        success: function (result) {
-            $("#Registrarmodal").modal("fade");
-          Swal.fire(
-        		  'Usuario Registrado',
-        		  'active su cuenta viendo el correo enviado a :'+result.correo,
-        		  'success'
-        		)
-        },error:function(err){
 
-            },
-      });
-});
-		
-		</script>
+	
 </body>
+
 </html>

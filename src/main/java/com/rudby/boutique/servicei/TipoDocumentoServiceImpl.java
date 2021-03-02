@@ -19,4 +19,5 @@ public class TipoDocumentoServiceImpl implements TipoDocumentoService {
 	public List<TipoDocumento> getDocumentos() {
 		return documentodao.getDocumentos();
 	}
+	
 }

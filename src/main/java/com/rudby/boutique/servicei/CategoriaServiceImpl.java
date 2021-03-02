@@ -10,14 +10,19 @@ import com.rudby.boutique.repository.CategoriaDao;
 import com.rudby.boutique.service.CategoriaService;
 
 @Service
-public class CategoriaServiceImpl implements CategoriaService{
+public class CategoriaServiceImpl implements CategoriaService {
 
 	@Autowired
 	CategoriaDao categoridao;
-	
+
 	@Override
 	public List<Categoria> getCategoriasPrincipales() {
 		return categoridao.getCategoriasPrincipales();
+	}
+
+	@Override
+	public List<Categoria> getCategorias() {
+		return categoridao.getCategorias();
 	}
 
 }

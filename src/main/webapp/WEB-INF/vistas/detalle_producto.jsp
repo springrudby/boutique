@@ -64,7 +64,10 @@
 									data-lightbox="productview"></a>
 							</div>
 							<div class="col-lg-6">
-							<button class="close p-4" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">�</span></button>
+								<button class="close p-4" type="button" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
 								<div class="p-5 my-md-4">
 									<!-- ul class="list-inline mb-2">
 										<li class="list-inline-item m-0"><i
@@ -79,17 +82,17 @@
 											class="fas fa-star small text-warning"></i></li>
 									</ul-->
 									<h2 class="h4">Red digital smartwatch</h2>
-									<p class="text-muted">S/ 250</p>
+									<p class="text-muted">$250</p>
 									<p class="text-small mb-4">Lorem ipsum dolor sit amet,
 										consectetur adipiscing elit. In ut ullamcorper leo, eget
 										euismod orci. Cum sociis natoque penatibus et magnis dis
 										parturient montes nascetur ridiculus mus. Vestibulum ultricies
 										aliquam convallis.</p>
-									<c:if test="${sessionScope.userSesion != null}">
 									<div class="row align-items-stretch mb-4">
 										<div class="col-sm-7 pr-sm-0">
-											<div class="border d-flex align-items-center justify-content-between py-1 px-3">
-												<span class="small text-uppercase text-gray mr-4 no-select">cantidad</span>
+											<div
+												class="border d-flex align-items-center justify-content-between py-1 px-3">
+												<span class="small text-uppercase text-gray mr-4 no-select">Quantity</span>
 												<div class="quantity">
 													<button class="dec-btn p-0">
 														<i class="fas fa-caret-left"></i>
@@ -103,30 +106,11 @@
 											</div>
 										</div>
 										<div class="col-sm-5 pl-sm-0">
-											<a class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0" href="cart.html">Add to cart</a>
+											<a
+												class="btn btn-dark btn-sm btn-block h-100 d-flex align-items-center justify-content-center px-0"
+												href="cart.html">Add to cart</a>
 										</div>
 									</div>
-									</c:if>
-									<c:if test="${sessionScope.userSesion == null}">
-									<div class="row align-items-stretch mb-4">
-										<div class="col-sm-7 pr-sm-0">
-											<div class="border d-flex align-items-center justify-content-between py-1 px-3">
-												<span class="small text-uppercase text-gray mr-4 no-select">cantidad</span>
-												<div class="quantity">
-													<button class="dec-btn p-0">
-														<i class="fas fa-caret-left"></i>
-													</button>
-													<input class="form-control border-0 shadow-0 p-0"
-														type="text" value="1">
-													<button class="inc-btn p-0">
-														<i class="fas fa-caret-right"></i>
-													</button>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-									</c:if>
 									<!-- a class="btn btn-link text-dark p-0" href="#"><i
 										class="far fa-heart mr-2"></i>Add to wish list</a-->
 								</div>
@@ -162,28 +146,18 @@
               <!-- SHOP SIDEBAR-->
               <div class="col-lg-3 order-1 order-lg-1">
                 <h5 class="text-uppercase mb-4">CATEGORIAS</h5>
-                 
-                 
-				<div id="accordion">	
+                
                 <c:forEach items="${categorias}" var="cat"> 
-					
-						<div class="py-2 px-4 bg-dark text-white mb-3 ">
-						<a href='#<c:out value="${cat.categoriapadre.detalle}"/>-<c:out value="${cat.categoriapadre.codigo}"/>' class="small text-uppercase font-weight-bold">${cat.categoriapadre.detalle}</a>
-						<a class="float-right collapsed"  style="cursor: pointer" data-toggle="collapse" data-target="#collapse<c:out value="${cat.categoriapadre.codigo}"/>" aria-expanded="true" aria-controls="collapse<c:out value="${cat.categoriapadre.codigo}"/>"><i class="fas fa-plus"></i></a>
-						</div>						
-						
-		                <div class="collapse"  id="collapse<c:out value="${cat.categoriapadre.codigo}"/>"  data-parent="#accordion">
+						<div class="py-2 px-4 bg-dark text-white mb-3">
+						<a href='#<c:out value="${cat.categoriapadre.detalle}"/>-<c:out value="${cat.categoriapadre.codigo}"/>' class="small text-uppercase font-weight-bold">${cat.categoriapadre.detalle}</a></div>
 		                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal">
 		                	<c:forEach items="${cat.subcategorias}" var="subcat">
 		                  		<li class="mb-2"><a class="reset-anchor" href='#<c:out value="${subcat.detalle}"/>-<c:out value="${subcat.codigo}"/>'>${subcat.detalle}</a></li>                  		
 		                  	</c:forEach> 
 		                </ul>
-		                </div>
-		                
 				</c:forEach>
-                </div>
                 
-                <h6 class="text-uppercase mb-4">RANGO DE PRECIOS</h6>
+                <h6 class="text-uppercase mb-4">Price range</h6>
                 <div class="price-range pt-4 mb-5">
                   <div id="range"></div>
                   <div class="row pt-2">
@@ -192,10 +166,6 @@
                   </div>
                 </div> 
               </div>
-              
-              
-              
-              
               <!-- SHOP LISTING-->
               <div class="col-lg-9 order-2 order-lg-2 mb-5 mb-lg-0">
                 <div class="row mb-3 align-items-center">
@@ -220,21 +190,22 @@
                     </ul>
                   </div>
                 </div>
-                <div class="row" id="divContenedor">
+                <div class="row">
                   <!-- PRODUCT-->
                   <div class="col-lg-4 col-sm-6">
                     <div class="product text-center">
                       <div class="mb-3 position-relative">
                         <div class="badge text-white badge-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="img/product-1.jpg" alt="..."></a>
                         <div class="product-overlay">
-                          <ul class="mb-0 list-inline">                            
-                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">VER DETALLE</a></li>
+                          <ul class="mb-0 list-inline">
+                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#"><i class="far fa-heart"></i></a></li>
+                            <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
                             <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="#productView" data-toggle="modal"><i class="fas fa-expand"></i></a></li>
                           </ul>
                         </div>
                       </div>
-                      <h6> <a class="reset-anchor" href="detail.html"> AirPods</a></h6>
-                      <p class="small text-muted">S/120</p>
+                      <h6> <a class="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
+                      <p class="small text-muted">$250</p>
                     </div>
                   </div>
                   <!-- PRODUCT-->
@@ -515,44 +486,6 @@
 		crossorigin="anonymous">
 
 
-<script>
-
-var item_producto = function (producto) {
-    return `<div class="col-lg-4 col-sm-6">
-                  <div class="product text-center">
-                    <div class="mb-3 position-relative">
-                      <div class="badge text-white badge-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="${producto.imagen[0]}" alt="..."></a>
-                      <div class="product-overlay">
-                        <ul class="mb-0 list-inline">                            
-                          <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-dark" href="cart.html">VER DETALLE</a></li>
-                          <li class="list-inline-item mr-0"><a class="btn btn-sm btn-outline-dark" href="javascript:void(0)" onclick="openModal(${producto.codigo})"><i class="fas fa-expand"></i></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <h6> <a class="reset-anchor" href="${producto.codigo}"> ${producto.nombre}</a></h6>
-                    <p class="small text-muted">S/${producto.precio}</p>
-                  </div>
-                </div>`;
-  }
-	
-window.addEventListener('hashchange', function () {
-    var codigo = window.location.hash.substring(1).split("-")[1];
-	$.ajax({
-		type: "GET",
-		url: "productos/"+codigo,
-		contentType: "application/json", 
-		beforeSend:function(){ 
-		},
-		success: function (result) { 
-			console.log(result);
-		}
-		 
-	});
-})
-
-	//$("#showcategoria").text("");
-
-</script>
 
 </body>
 </html>

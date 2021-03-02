@@ -30,7 +30,7 @@
 <!-- Custom stylesheet - for your changes-->
 <link rel="stylesheet" href="./css/custom.css">
 <!-- Favicon-->
-<link rel="shortcut icon" href="img/favicon.png">
+<link rel="shortcut icon" href="./img/favicon.png">
 <!-- Tweaks for older IEs-->
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -126,14 +126,14 @@
 				<div class="container">
 					<div class="row px-4 px-lg-5 py-lg-4 align-items-center">
 						<div class="col-lg-6">
-							<h1 class="h2 text-uppercase mb-0">Checkout</h1>
+							<h1 class="h2 text-uppercase mb-0">Proceso de Pago</h1>
 						</div>
 						<div class="col-lg-6 text-lg-right">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb justify-content-lg-end mb-0 px-0">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item"><a href="cart.html">Cart</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Checkout</li>
+									<li class="breadcrumb-item"><a href="inicio">INICIO</a></li>
+									<li class="breadcrumb-item"><a href="carrito">CARRITO</a></li>
+									<li class="breadcrumb-item active" aria-current="page">PAGAR</li>
 								</ol>
 							</nav>
 						</div>
@@ -142,7 +142,7 @@
 			</section>
 			<section class="py-5">
 				<!-- BILLING ADDRESS-->
-				<h2 class="h5 text-uppercase mb-4">Billing details</h2>
+				<h2 class="h5 text-uppercase mb-4">DETALLE DE FACTURA</h2>
 				<div class="row">
 					<div class="col-lg-8">
 						<form action="#">
@@ -151,30 +151,44 @@
 									<label class="text-small text-uppercase" for="nombre">Nombre</label>
 									<input class="form-control form-control-lg" id="nombre" type="text" placeholder="Ingrese su nombre">
 								</div>
-								<div class="col-lg-6 form-group">
-									<label class="text-small text-uppercase" for="apematerno">Apellido Materno</label> 
-									<input class="form-control form-control-lg" id="apematerno" type="text" placeholder="Ingrese su Apellido Materno">
-								</div>
+							
 								<div class="col-lg-6 form-group">
 									<label class="text-small text-uppercase" for="apapterno">Apellido Paterno</label> 
 									<input class="form-control form-control-lg" id="apapterno" type="text" placeholder="Ingrese su Apellido Paterno">
 								</div>
 								<div class="col-lg-6 form-group">
-									<label class="text-small text-uppercase" for="correo">Correo Electr贸nico</label> 
-									<input class="form-control form-control-lg" id="correo" type="email" placeholder="Ingrese su correo electr贸nico">
+									<label class="text-small text-uppercase" for="apematerno">Apellido Materno</label> 
+									<input class="form-control form-control-lg" id="apematerno" type="text" placeholder="Ingrese su Apellido Materno">
 								</div>
+								
 								<div class="col-lg-6 form-group">
 									<label class="text-small text-uppercase" for="celular">Celular</label> 
 										<input class="form-control form-control-lg" id="celular" type="tel" placeholder="+51 999 999 999">
 								</div>
-								<div class="col-lg-6 form-group">
+								<div class="col-lg-12 form-group">
+									<label class="text-small text-uppercase" for="correo">Correo Electr髇ico</label> 
+									<input class="form-control form-control-lg" id="correo" type="email" placeholder="Ingrese su correo electr贸nico">
+								</div>								
+								<div class="col-lg-12 text-right">
+									<label for="checkfactura">縌uieres Factura?</label>
+									<input id="checkfactura" type="checkbox"/>
+								</div>
+								
+								<div class="col-lg-4 form-group" id="divruc" style="display: none">
 									<label class="text-small text-uppercase" for="Ruc (opcional)">Ruc (opcional)</label>
 									 <input class="form-control form-control-lg"
 										id="company" type="text" placeholder="Ruc (opcional)">
 								</div>
-								<div class="col-lg-12 form-group">
-									<label class="text-small text-uppercase" for="razon">Raz贸n (opcional)</label>
-									 <input class="form-control form-control-lg" type="text" id="razon" placeholder="Ingrese la raz贸n social"/>
+								<div class="col-lg-8 form-group" id="divrazon" style="display: none">
+									<label class="text-small text-uppercase" for="razon">Raz髇 social (opcional)</label>
+									 <input class="form-control form-control-lg" type="text" id="razon" placeholder="Ingrese la raz髇 social"/>
+								</div>
+								
+									<div class="col-lg-12 form-group">
+									<label class="text-small text-uppercase" for="distrito">Distrito</label>
+									<select class="selectpicker country" id="distrito"
+										data-width="fit" data-style="form-control form-control-lg"
+										data-title="elige tu distrito"></select>
 								</div>
 								<div class="col-lg-12 form-group">
 									<label class="text-small text-uppercase" for="Calle referencia 1">Calle referencia 1</label> <input class="form-control form-control-lg"
@@ -186,15 +200,13 @@
 										id="addressalt" type="text"
 										placeholder="Ingresela Direccion de departamento(optional)">
 								</div>
-								<div class="col-lg-6 form-group">
-									<label class="text-small text-uppercase" for="distrito">Distrito</label>
-									<select class="selectpicker country" id="distrito"
-										data-width="fit" data-style="form-control form-control-lg"
-										data-title="elige tu distrito"></select>
+							
+								<div class="col-lg-12" class="text-center">
+									<label for="checkterminos" >Acepto los T閞minos y condiciones</label>
+									<input id="checkterminos" type="checkbox"/>
 								</div>
-								
 								   
-								<div class="col-lg-12 form-group">
+								<div class="col-lg-12 form-group text-right" id="btnpagarvisa" style="display: none">
 									<button class="btn btn-dark" type="submit">Realizar Pedido</button>
 								</div>
 							</div>
@@ -295,6 +307,29 @@
 		crossorigin="anonymous">
 
 
+<script>
 
+
+
+$("#checkterminos").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+    	$("#btnpagarvisa").css("display","block"); 
+    } else {
+    	$("#btnpagarvisa").css("display","none"); 
+    }
+});
+
+$("#checkfactura").on( 'change', function() {
+    if( $(this).is(':checked') ) {
+    	$("#divruc").css("display","block");
+    	$("#divrazon").css("display","block");        
+    } else {
+    	$("#divruc").css("display","none");
+    	$("#divrazon").css("display","none");
+    }
+});
+
+
+</script>
 </body>
 </html>

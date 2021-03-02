@@ -12,4 +12,5 @@ import com.rudby.boutique.domain.Categoria;
 public interface CategoriaDao {
 
 	public List<Categoria> getCategoriasPrincipales();
+	public List<Categoria> getCategorias();
 }

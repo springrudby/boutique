@@ -6,4 +6,19 @@
 		CALL USP_POSTRegistrarUsuario (#{nombre},#{ape_paterno},#{ape_materno},#{codigo_tipodocumento},#{documento},#{correo},#{clave},#{token}) 
 	</insert>
  
+ 	<!-- insert id="RegistrarUsuario" statementType="CALLABLE" parameterType="Map" >
+		CALL USP_POSTRegistrarUsuario (#{nombre},#{ape_paterno},#{ape_materno},#{codigo_tipodocumento},#{documento},#{correo},#{clave},#{token}) 
+	</insert-->
+	
+	<select id="VerificarExistenciaDocumento" statementType="CALLABLE" resultType="Boolean" parameterType="String">
+		CALL USP_GETExistenciaDOCUMENTO (#{documento})
+	</select>
+	
+	<select id="VerificarExistenciaCorreo" statementType="CALLABLE" resultType="Boolean" parameterType="String">
+		CALL USP_GETExistenciaCORREO (#{correo})
+	</select>
+	
+	<select id="LoginUsuario" statementType="CALLABLE" resultType="Usuario" parameterType="Map">
+		CALL USP_GETLoginUsuario (#{correo},#{clave})
+	</select>
 </mapper>

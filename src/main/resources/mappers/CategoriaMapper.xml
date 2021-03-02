@@ -5,5 +5,10 @@
 	<select id="getCategoriasPrincipales" statementType="CALLABLE" resultType="Categoria">
 		CALL USP_GETCategoriasPrincipales 
 	</select>
+	
+	<select id="getCategorias" statementType="CALLABLE" resultType="Categoria">
+		CALL USP_GETCategoriasTodas 
+	</select>
+	
  
 </mapper>
