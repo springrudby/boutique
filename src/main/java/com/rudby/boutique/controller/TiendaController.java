@@ -44,14 +44,20 @@ public class TiendaController {
 		return myv;
 	}
 	
-	@GetMapping("/productos/{codigo_categoria}")
+	@GetMapping("/productos/{codigo_producto}")
+	public @ResponseBody ResponseEntity<?> getProductoPorCodigo(@PathVariable("codigo_producto") int codigo_producto){
+		Map<String,Object> rpta = new HashMap<>();
+		
+		rpta.put("producto", productoservice.getProductoPorCodigo(codigo_producto));
+		return new ResponseEntity<Map<String,Object>>(rpta,HttpStatus.OK);
+	}
+	
+	@GetMapping("/productos.categoria/{codigo_categoria}")
 	public @ResponseBody ResponseEntity<?> getProductoPorCategoria(@PathVariable("codigo_categoria") int codigo_categoria){
 		Map<String,Object> rpta = new HashMap<>();
+		rpta.put("categoria", categoriservice.getCategoriaPorCodigo(codigo_categoria));
 		rpta.put("productos", productoservice.getProductosPorCategoria(codigo_categoria));
 		return new ResponseEntity<Map<String,Object>>(rpta,HttpStatus.OK);
 	}
-
-	
-
-
+  
 }

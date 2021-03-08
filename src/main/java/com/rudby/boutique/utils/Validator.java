@@ -7,10 +7,12 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.rudby.boutique.domain.Suscritos;
 import com.rudby.boutique.domain.TipoDocumento;
 import com.rudby.boutique.domain.Usuario;
 import com.rudby.boutique.domain.UtilError;
 import com.rudby.boutique.repository.UsuarioDao;
+import com.rudby.boutique.service.SuscritosService;
 import com.rudby.boutique.service.TipoDocumentoService;
 import com.rudby.boutique.service.UsuarioService;
 
@@ -22,12 +24,16 @@ public class Validator {
 
 	@Autowired
 	TipoDocumentoService tpservice;
+
 	@Autowired
 	UsuarioService usservice;
 
+	@Autowired
+	SuscritosService suscritoservice;
+	
+	
 	TipoDocumento find_Tipodocumento;
 
-	boolean existecodigo;
 
 	public List<UtilError> ValidarLoginUsuario(String correo, String clave) {
 		ERRORES = new ArrayList<>();
@@ -40,6 +46,21 @@ public class Validator {
 		return ERRORES;
 	}
 
+	public List<UtilError> ValidarRegistroSuscriptor(String correo,String nombre) {
+		ERRORES = new ArrayList<>();
+		if (help.isEmail(correo.trim())) {
+			ERRORES.add(new UtilError("correosus", "Este", "El formato de este campo debe ser de correo"));
+		}
+		if (help.isText(nombre.trim())) {
+			ERRORES.add(new UtilError("nombresus", "Este","Este campo solo acepta Texto."));
+		}
+		if (suscritoservice.VerificarExistenciaCorreo(correo.trim())) {
+			ERRORES.add(new UtilError("correosus", "Correo ya fue registrado", "Este correo ya fue registrado"));
+		}
+		return ERRORES;		
+	}
+
+	boolean existecodigo;
 	public List<UtilError> ValidarRegistroUsuario(Usuario us) {
 		find_Tipodocumento = null;
 		existecodigo = false;

@@ -12,4 +12,5 @@ public interface UsuarioService {
 	public boolean VerificarExistenciaCorreo(String correo);
 	
 	public Usuario LoginUsuario(String correo,String clave);
+	public void ActivarUsuarioPorToken(String token);
 }

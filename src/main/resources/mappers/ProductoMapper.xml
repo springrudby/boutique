@@ -6,6 +6,16 @@
 		CALL USP_GETProductosPorCategoria (#{codigo_categoria})
 	</select>
  
-	
+	<select id="getProductoPorCodigo" statementType="CALLABLE" parameterType="int" resultType="ProductoTiendaDetalle" >
+		CALL USP_GETProductoPorCodigo (#{codigo_producto})
+	</select>
  
+ 	<select id="getImagenesPorCodigoProducto" statementType="CALLABLE" parameterType="int" resultType="String" >
+ 	CALL USP_GETImagenesProductoPorCodigo (#{codigo_producto})
+ 	</select>
+ 	
+ 	
+ 	<select id="getProductosRelacionadosPorProducto" statementType="CALLABLE" parameterType="int" resultType="ProductoTienda" >
+		CALL USP_GETProductosRelacionadosPorProducto (#{codigo_categoria})
+	</select>
 </mapper>

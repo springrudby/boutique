@@ -8,4 +8,6 @@ public interface CategoriaService {
 
 	public List<Categoria> getCategoriasPrincipales();
 	public List<Categoria> getCategorias();
+	public List<Categoria> getCategoriaPorCodigo(int categoria_codigo);
+
 }

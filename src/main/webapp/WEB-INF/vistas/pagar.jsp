@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Boutique</title>
 <!-- Bootstrap CSS-->
 <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
@@ -65,7 +65,7 @@
 							<div class="col-lg-6">
 								<button class="close p-4" type="button" data-dismiss="modal"
 									aria-label="Close">
-									<span aria-hidden="true">×</span>
+									<span aria-hidden="true">Ã</span>
 								</button>
 								<div class="p-5 my-md-4">
 									<ul class="list-inline mb-2">
@@ -166,11 +166,11 @@
 										<input class="form-control form-control-lg" id="celular" type="tel" placeholder="+51 999 999 999">
 								</div>
 								<div class="col-lg-12 form-group">
-									<label class="text-small text-uppercase" for="correo">Correo Electr�nico</label> 
-									<input class="form-control form-control-lg" id="correo" type="email" placeholder="Ingrese su correo electrónico">
+									<label class="text-small text-uppercase" for="correo">Correo Electrónico</label> 
+									<input class="form-control form-control-lg" id="correo" type="email" placeholder="Ingrese su correo electrÃ³nico">
 								</div>								
 								<div class="col-lg-12 text-right">
-									<label for="checkfactura">�Quieres Factura?</label>
+									<label for="checkfactura">¿Quieres Factura?</label>
 									<input id="checkfactura" type="checkbox"/>
 								</div>
 								
@@ -180,8 +180,8 @@
 										id="company" type="text" placeholder="Ruc (opcional)">
 								</div>
 								<div class="col-lg-8 form-group" id="divrazon" style="display: none">
-									<label class="text-small text-uppercase" for="razon">Raz�n social (opcional)</label>
-									 <input class="form-control form-control-lg" type="text" id="razon" placeholder="Ingrese la raz�n social"/>
+									<label class="text-small text-uppercase" for="razon">Razón social (opcional)</label>
+									 <input class="form-control form-control-lg" type="text" id="razon" placeholder="Ingrese la razón social"/>
 								</div>
 								
 									<div class="col-lg-12 form-group">
@@ -202,7 +202,7 @@
 								</div>
 							
 								<div class="col-lg-12" class="text-center">
-									<label for="checkterminos" >Acepto los T�rminos y condiciones</label>
+									<label for="checkterminos" >Acepto los Términos y condiciones</label>
 									<input id="checkterminos" type="checkbox"/>
 								</div>
 								   

@@ -39,4 +39,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return usuariodao.LoginUsuario(correo, clave);
 	}
 
+	@Override
+	public void ActivarUsuarioPorToken(String token) {
+		// TODO Auto-generated method stub
+		usuariodao.ActivarUsuarioPorToken(token);
+	}
+
 }

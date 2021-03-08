@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Boutique</title>
 <!-- Bootstrap CSS-->
 <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
@@ -65,7 +65,7 @@
 							<div class="col-lg-6">
 								<button class="close p-4" type="button" data-dismiss="modal"
 									aria-label="Close">
-									<span aria-hidden="true">×</span>
+									<span aria-hidden="true">Ã</span>
 								</button>
 								<div class="p-5 my-md-4">
 									<ul class="list-inline mb-2">
@@ -192,7 +192,7 @@
 								</div>
 							</div>
 							<h6>
-								<a class="reset-anchor" href="detail.html">Kui Ye Chen’s
+								<a class="reset-anchor" href="detail.html">Kui Ye Chenâs
 									AirPods</a>
 							</h6>
 							<p class="small text-muted">$250</p>

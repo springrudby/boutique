@@ -17,4 +17,6 @@ public interface UsuarioDao {
 	public boolean VerificarExistenciaCorreo(@Param("correo") String correo);
 
 	public Usuario LoginUsuario(@Param("correo")String correo,@Param("clave")String clave);
+	
+	public void ActivarUsuarioPorToken(@Param("token")String token);
 }

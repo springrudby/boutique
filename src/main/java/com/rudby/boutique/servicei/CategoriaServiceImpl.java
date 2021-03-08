@@ -25,4 +25,10 @@ public class CategoriaServiceImpl implements CategoriaService {
 		return categoridao.getCategorias();
 	}
 
+	@Override
+	public List<Categoria> getCategoriaPorCodigo(int categoria_codigo) {
+		// TODO Auto-generated method stub
+		return categoridao.getCategoriaPorCodigo(categoria_codigo);
+	}
+
 }

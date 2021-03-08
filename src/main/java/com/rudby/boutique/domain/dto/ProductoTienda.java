@@ -1,4 +1,4 @@
-package com.rudby.boutique.domain;
+package com.rudby.boutique.domain.dto;
 
 import java.io.Serializable;
 
@@ -20,6 +20,6 @@ public class ProductoTienda implements Serializable{
 	Double precio_oferta;
 	Boolean vacio;
 	String detalle_categoria;
-	String imagen;
+	String foto_producto;
 
 }

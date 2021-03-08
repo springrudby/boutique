@@ -10,5 +10,9 @@
 		CALL USP_GETCategoriasTodas 
 	</select>
 	
+	<select id="getCategoriaPorCodigo" statementType="CALLABLE" resultType="Categoria" parameterType="int">
+		CALL USP_GETCategoriaPorCodigo (#{categoria_codigo})
+	</select>
+	
  
 </mapper>

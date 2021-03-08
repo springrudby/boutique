@@ -57,5 +57,46 @@ public class SendEmail {
 		
 		Transport.send(msg);
 	}
+	
+	String hostname = "http://localhost:8084/boutique/validartoken";
+	
+	public void Enviar_Email_Token(String correo,String token) throws AddressException, MessagingException, IOException {
+		Properties props = new Properties();
+		   props.put("mail.smtp.auth", "true");
+		   props.put("mail.smtp.starttls.enable", "true");
+		   props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+		   props.put("mail.smtp.host", "smtp.gmail.com");
+		   props.put("mail.smtp.port", "587");
+
+		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("cesarsdev@gmail.com", "pinedo2020");
+			}
+		});
+		Message msg = new MimeMessage(session);
+		msg.setFrom(new InternetAddress("cesarsdev@gmail.com", false));
+
+		msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(correo)); 
+		msg.setSubject("Activa tu Cuenta");
+		
+		msg.setContent("ACTIVA TU CUENTA <a href="+hostname+"/"+token+">ACTIVA TU CUENTA</a>", "text/html");
+		msg.setSentDate(new Date());
+
+		MimeBodyPart messageBodyPart = new MimeBodyPart();
+		
+		messageBodyPart.setContent("<a href="+hostname+"/"+token+">ACTIVA TU CUENTA</a>", "text/html");
+
+		Multipart multipart = new MimeMultipart();
+		multipart.addBodyPart(messageBodyPart);
+		MimeBodyPart attachPart = new MimeBodyPart();
+
+//		attachPart.attachFile("/var/tmp/image19.png");
+		attachPart.attachFile("D:\\Clientes\\Rugby\\GIT\\boutique\\src\\main\\resources\\static\\img\\cat-img-2.jpg");
+		
+		multipart.addBodyPart(attachPart);		
+		msg.setContent(multipart);
+		
+		Transport.send(msg);
+	}
 
 }

@@ -21,4 +21,8 @@
 	<select id="LoginUsuario" statementType="CALLABLE" resultType="Usuario" parameterType="Map">
 		CALL USP_GETLoginUsuario (#{correo},#{clave})
 	</select>
+	
+	<update id="ActivarUsuarioPorToken" parameterType="String">
+		CALL USP_UPDATEUsuarioPorToken (#{token})
+	</update>
 </mapper>

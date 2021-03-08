@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
 <head>
-<meta charset="ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Boutique</title>
 <!-- Bootstrap CSS-->
 <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
@@ -152,7 +152,7 @@
 					<c:forEach items="${categorias}" var="cat">
 
 						<div class="col-md-4 mb-4 mb-md-0">
-							<a class="category-item mb-4" href="shop.html"><img
+							<a class="category-item mb-4" href="tienda#${cat.detalle}-${cat.codigo}"><img
 								class="img-fluid" src="${cat.imagen}" alt=""><strong
 								class="category-item-title">${cat.detalle}</strong></a>
 							<!-- a
@@ -178,24 +178,27 @@
 					<h2 class="h5 text-uppercase mb-4">Top trending products</h2>
 				</header>
 				<div class="row">
+				<c:forEach items="${relacionados}" var="prd">
 					<!-- PRODUCT-->
 					<div class="col-xl-3 col-lg-4 col-sm-6">
 						<div class="product text-center">
 							<div class="position-relative mb-3">
 								<div class="badge text-white badge-"></div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-1.jpg" alt="..."></a>
+								<a class="d-block" href="?producto=${prd.nombre}-${prd.codigo}"><img
+									class="img-fluid w-100" src="${prd.foto_producto}" alt="..."></a>
 								<div class="product-overlay">
+								<c:if test="${sessionScope.userSesion != null}">
 									<ul class="mb-0 list-inline">
 										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
+											class="btn btn-sm btn-outline-dark" href="#">
+											<i class="far fa-heart"></i></a></li>
 										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
+											class="btn btn-sm btn-dark" href="javascript:void(0)">Añadir a carrito</a></li>
 										<li class="list-inline-item mr-0"><a
 											class="btn btn-sm btn-outline-dark" href="#productView"
 											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
 									</ul>
+									</c:if>
 								</div>
 							</div>
 							<h6>
@@ -204,194 +207,8 @@
 							</h6>
 							<p class="small text-muted">$250</p>
 						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-primary">Sale</div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-2.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Air Jordan 12 gym
-									red</a>
-							</h6>
-							<p class="small text-muted">$300</p>
-						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-"></div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-3.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Cyan cotton
-									t-shirt</a>
-							</h6>
-							<p class="small text-muted">$25</p>
-						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-info">New</div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-4.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Timex Unisex
-									Originals</a>
-							</h6>
-							<p class="small text-muted">$351</p>
-						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-danger">Sold</div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-5.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Red digital
-									smartwatch</a>
-							</h6>
-							<p class="small text-muted">$250</p>
-						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-"></div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-6.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Nike air max 95</a>
-							</h6>
-							<p class="small text-muted">$300</p>
-						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-"></div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-7.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Joemalone Women
-									prefume</a>
-							</h6>
-							<p class="small text-muted">$25</p>
-						</div>
-					</div>
-					<!-- PRODUCT-->
-					<div class="col-xl-3 col-lg-4 col-sm-6">
-						<div class="product text-center">
-							<div class="position-relative mb-3">
-								<div class="badge text-white badge-"></div>
-								<a class="d-block" href="detail.html"><img
-									class="img-fluid w-100" src="img/product-8.jpg" alt="..."></a>
-								<div class="product-overlay">
-									<ul class="mb-0 list-inline">
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-outline-dark" href="#"><i
-												class="far fa-heart"></i></a></li>
-										<li class="list-inline-item m-0 p-0"><a
-											class="btn btn-sm btn-dark" href="cart.html">Add to cart</a></li>
-										<li class="list-inline-item mr-0"><a
-											class="btn btn-sm btn-outline-dark" href="#productView"
-											data-toggle="modal"><i class="fas fa-expand"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<h6>
-								<a class="reset-anchor" href="detail.html">Apple Watch</a>
-							</h6>
-							<p class="small text-muted">$351</p>
-						</div>
-					</div>
+					</div> 
+					</c:forEach>
 				</div>
 			</section>
 			<!-- SERVICES-->
@@ -448,21 +265,25 @@
 				<div class="container p-0">
 					<div class="row">
 						<div class="col-lg-6 mb-3 mb-lg-0">
-							<h5 class="text-uppercase">Let's be friends!</h5>
-							<p class="text-small text-muted mb-0">Nisi nisi tempor
-								consequat laboris nisi.</p>
+							<h5 class="text-uppercase">Seamos Amigos!</h5>
+							<p class="text-small text-muted mb-0">Únete a nosotros y te llegarán nuestras promociones</p>
 						</div>
 						<div class="col-lg-6">
-							<form action="#">
-								<div class="input-group flex-column flex-sm-row mb-3">
-									<input class="form-control form-control-lg py-3" type="email"
-										placeholder="Enter your email address"
-										aria-describedby="button-addon2">
-									<div class="input-group-append">
-										<button class="btn btn-dark btn-block" id="button-addon2"
-											type="submit">Subscribe</button>
+							<form id="formsuscriptor">
+								<div class="input-group flex-column input-group-sm mb-3">
+									<input class="form-control form-control-lg py-3 pl-2 p-1 m-1" id="nombresus" type="text" placeholder="Ingrese su nombre" >
+									 
+									<small style="display: none" class="text-danger" id="nombresuserror"></small>
 									</div>
-								</div>
+									<div class="input-group flex-column input-group-sm mb-3">
+									<input class="form-control form-control-lg py-3 pl-2 p-1 m-1" id="correosus" type="email" placeholder="Ingrese su correo" >
+									 
+									<small style="display: none" class="text-danger" id="correosuserror"></small>
+									</div>
+									<div class="input-group-append ">
+										<button class="btn btn-dark btn-block m-1" id="btntsuscribete" type="button">Suscribete</button>
+									</div>
+								 
 							</form>
 						</div>
 					</div>
@@ -540,7 +361,40 @@
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
 		crossorigin="anonymous">
 
+<script>
 
+$("#btntsuscribete").on("click",function(){
+	$.ajax({
+		type: "POST",
+		url: "registrarsuscriptor",
+		contentType: "application/json",
+		data: JSON.stringify(
+		{
+			nombre:$("#nombresus").val(),
+			correo:$("#correosus").val()
+		}
+		),
+		beforeSend:function(){
+			$("#formsuscriptor small").css("display","none");
+		},
+		success: function (result) { 
+			$("#formsuscriptor").trigger("reset");
+			Swal.fire(
+				'Nuevo Suscriptor',
+				 result.mensaje,
+				'success'
+			)
+		}, error: function (err) {
+			console.log(err);
+			for( var e of err.responseJSON.errores){
+				$("#"+e.input+"error").text(e.mensaje);
+				$("#"+e.input+"error").css("display","block");
+			}
+		},
+	});
+});
+
+</script>
 	
 </body>
 

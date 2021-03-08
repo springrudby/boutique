@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <header class="header bg-white">
 	<div class="container px-0 px-lg-3">
@@ -45,7 +44,7 @@
 							<div class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<a class="dropdown-item" href="#">Ver Perfil</a> <a
-									class="dropdown-item" href="cerrarsesion">Cerrar Sesión</a>
+									class="dropdown-item" href="cerrarsesion">Cerrar SesiÃ³n</a>
 							</div></li>
 
 					</c:if>
@@ -77,7 +76,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Iniciar Sesión</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Iniciar SesiÃ³n</h5>
 				<button type="button" class="close" data-dismiss="modal"
 					aria-label="Close">
 					<span aria-hidden="true">&times;</span>
@@ -93,7 +92,7 @@
 							id="txtcorreoerror" style="display: none;" class="text-danger"></small>
 					</div>
 					<div class="form-group">
-						<label for="txtclave" class="col-form-label">Contraseña:</label> <input
+						<label for="txtclave" class="col-form-label">ContraseÃ±a:</label> <input
 							type="password" class="form-control" id="txtclave" /> <small
 							id="txtclaveerror" style="display: none;" class="text-danger"></small>
 					</div>
@@ -104,7 +103,7 @@
 				<!-- button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
 				<button type="button" id="btningresar"
 					class="btn btn-block text-white btn-primary">Ingresar</button>
-				<!-- a class="btn text-info btn-default">recuperar contraseña</a-->
+				<!-- a class="btn text-info btn-default">recuperar contraseÃ±a</a-->
 			</div>
 		</div>
 	</div>
@@ -180,14 +179,14 @@ $('#modalprueba').click(function(){
 							8 caracteres</small>
 					</div>
 					<div class="form-group">
-						<label for="message-text" class="col-form-label">Contraseña:</label>
+						<label for="message-text" class="col-form-label">ContraseÃ±a:</label>
 						<input type="text" class="form-control" id="clave" /> <small
 							id="claveerror" class="text-danger" style="display: none">minimo
 							8 caracteres</small>
 					</div>
 					<div class="form-group">
 						<label for="message-text" class="col-form-label">Repetir
-							Contraseña:</label> <input type="text" class="form-control" id="clave1" />
+							ContraseÃ±a:</label> <input type="text" class="form-control" id="clave1" />
 						<small id="clave1error" class="text-danger" style="display: none">minimo
 							8 caracteres</small>
 					</div>
