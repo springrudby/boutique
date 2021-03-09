@@ -22,9 +22,9 @@ public class Helper {
 
 	boolean isExists(String campo) {
 		return !campo.trim().isEmpty();
-	}
+	}	
 	
-	public boolean isNumeric(String str) {
+	private boolean isNumeric(String str) {
 		try {
 			Double.parseDouble(str);
 			return true;
